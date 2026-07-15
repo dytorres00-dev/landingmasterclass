@@ -1,15 +1,20 @@
 import { Container } from "@/components/ui/Container";
 
 export function Footer() {
-  const year = new Date().getFullYear();
   return (
-    <footer className="bg-carbon text-bone/80 py-10">
-      <Container className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-        <p className="font-serif text-[18px] text-bone">
-          Dylan Torres
-        </p>
-        <p className="text-[12px] text-bone/55 font-sans">
-          © {year} · IA aplicada a PYMEs colombianas · Cali, Colombia
+    <footer className="bg-carbon py-10 text-bone/60">
+      <Container className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center">
+        <div className="flex items-center gap-3.5">
+          <span className="font-serif text-[24px] font-semibold tracking-wide text-gold">
+            DT
+          </span>
+          <p className="text-[13px] leading-tight">
+            <span className="text-bone">Dylan Torres</span> · Estratega de
+            Marketing &amp; IA
+          </p>
+        </div>
+        <p className="font-serif text-[15px] italic text-bone/45">
+          El futuro pertenece a quienes se adaptan hoy.
         </p>
       </Container>
     </footer>
