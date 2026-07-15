@@ -68,11 +68,32 @@ export function RegisterForm() {
     setStatus("submitting");
     setErrorMessage("");
 
+    // event_id compartido entre el Píxel (cliente) y la Conversions API
+    // (servidor) para que Meta deduplique el mismo Lead.
+    const eventId =
+      typeof crypto !== "undefined" && "randomUUID" in crypto
+        ? crypto.randomUUID()
+        : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+
+    // Cookies que deja el Píxel de Meta; mejoran la calidad del match en CAPI.
+    const readCookie = (name: string) =>
+      typeof document !== "undefined"
+        ? document.cookie
+            .split("; ")
+            .find((c) => c.startsWith(`${name}=`))
+            ?.split("=")[1]
+        : undefined;
+
     try {
       const res = await fetch("/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          eventId,
+          fbp: readCookie("_fbp"),
+          fbc: readCookie("_fbc"),
+        }),
       });
 
       const body = (await res.json().catch(() => ({}))) as {
@@ -87,6 +108,13 @@ export function RegisterForm() {
         );
         setStatus("error");
         return;
+      }
+
+      // Evento Lead del Píxel (mismo event_id que la CAPI para deduplicar).
+      const fbq = (window as unknown as { fbq?: (...args: unknown[]) => void })
+        .fbq;
+      if (typeof fbq === "function") {
+        fbq("track", "Lead", {}, { eventID: eventId });
       }
 
       setSubmittedNombre(data.nombre);

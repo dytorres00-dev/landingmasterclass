@@ -5,6 +5,7 @@ import {
   USO_IA_LABELS,
   RETO_LABELS,
 } from "@/lib/schema";
+import { sendMetaLead } from "@/lib/meta";
 
 export const runtime = "nodejs";
 
@@ -31,6 +32,27 @@ export async function POST(request: Request) {
   }
 
   const data = parsed.data;
+
+  // Datos de tracking que vienen fuera del schema (Zod los descarta al validar).
+  const raw = payload as Record<string, unknown>;
+  const eventId = typeof raw.eventId === "string" ? raw.eventId : undefined;
+  const fbp = typeof raw.fbp === "string" ? raw.fbp : undefined;
+  const fbc = typeof raw.fbc === "string" ? raw.fbc : undefined;
+
+  // Evento "Lead" a la Conversions API de Meta (server-side). No bloquea ni
+  // rompe el registro: si falla o no está configurada, se ignora.
+  const forwardedFor = request.headers.get("x-forwarded-for");
+  await sendMetaLead({
+    email: data.email,
+    whatsapp: data.whatsapp,
+    nombre: data.nombre,
+    eventId,
+    fbp,
+    fbc,
+    clientIp: forwardedFor?.split(",")[0]?.trim(),
+    clientUserAgent: request.headers.get("user-agent") ?? undefined,
+    eventSourceUrl: request.headers.get("referer") ?? undefined,
+  });
 
   // Enviamos a Make tanto los valores crudos (por si necesitas filtrar/segmentar)
   // como las etiquetas legibles, para que la fila del Google Sheet y el correo

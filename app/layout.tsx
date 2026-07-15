@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
+import { MetaPixel } from "@/components/ui/MetaPixel";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -37,7 +38,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es-CO" className={`${cormorant.variable} ${inter.variable}`}>
-      <body className="min-h-screen antialiased">{children}</body>
+      <body className="min-h-screen antialiased">
+        <MetaPixel />
+        {children}
+      </body>
     </html>
   );
 }
