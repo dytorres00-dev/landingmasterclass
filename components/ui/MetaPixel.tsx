@@ -7,8 +7,12 @@ import Script from "next/script";
  *
  * Solo se renderiza si NEXT_PUBLIC_META_PIXEL_ID está configurado.
  */
+// Pixel ID de Dylan Torres. Es un valor público (aparece en el HTML del
+// cliente); la variable de entorno lo puede sobrescribir si algún día cambia.
+const DEFAULT_PIXEL_ID = "939339841402645";
+
 export function MetaPixel() {
-  const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
+  const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID || DEFAULT_PIXEL_ID;
   if (!pixelId) return null;
 
   return (

@@ -15,6 +15,9 @@ import crypto from "crypto";
 
 const GRAPH_VERSION = "v21.0";
 
+// Pixel ID de Dylan Torres (público). La variable de entorno lo sobrescribe.
+const DEFAULT_PIXEL_ID = "939339841402645";
+
 /** SHA-256 en hex, normalizando según pide Meta (trim + minúsculas). */
 function hash(value: string): string {
   return crypto
@@ -47,7 +50,7 @@ export interface MetaLeadInput {
  * registra en consola y devuelve false, para no romper el flujo del registro.
  */
 export async function sendMetaLead(input: MetaLeadInput): Promise<boolean> {
-  const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
+  const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID || DEFAULT_PIXEL_ID;
   const accessToken = process.env.META_CAPI_ACCESS_TOKEN;
 
   if (!pixelId || !accessToken) {
