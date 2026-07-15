@@ -1,8 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { AuroraBackground } from "@/components/ui/AuroraBackground";
 import { heroStagger, heroTitle, heroItem } from "@/lib/motion";
 
@@ -106,10 +106,19 @@ export function Hero() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
           className="relative mx-auto w-full max-w-[440px] lg:max-w-none"
         >
-          <div className="relative aspect-[4/5] w-full shadow-glow-forest">
-            <ImagePlaceholder
-              label="Retrato de Dylan"
-              className="h-full w-full"
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded shadow-glow-forest">
+            <Image
+              src="/dylan-hero.png"
+              alt="Dylan Torres presentando en vivo cómo automatizar negocios con inteligencia artificial"
+              fill
+              priority
+              sizes="(min-width: 1024px) 45vw, (min-width: 640px) 440px, 100vw"
+              className="object-cover"
+            />
+            {/* Velo sutil para que la tarjeta de nombre resalte */}
+            <div
+              aria-hidden
+              className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-carbon/50 to-transparent"
             />
             {/* Tarjeta de nombre */}
             <div className="absolute bottom-5 left-5 rounded-sm bg-bone/95 px-4 py-3 backdrop-blur-sm">
