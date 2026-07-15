@@ -107,6 +107,42 @@
         transparent 60%
       );
   }
+
+  /* Capa base de la aurora del Hero (blob difuso animable) */
+  .aurora-layer {
+    position: absolute;
+    border-radius: 9999px;
+    will-change: transform;
+    pointer-events: none;
+  }
+}
+
+/* ============================================================
+   Aurora sedosa del Hero — manchas de color que fluyen y se
+   funden lentamente. Trayectorias en bucle (0% == 100%) para
+   que el movimiento sea continuo, sin saltos.
+   ============================================================ */
+@keyframes auroraDrift1 {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  33%  { transform: translate3d(8%, 6%, 0) scale(1.14); }
+  66%  { transform: translate3d(-6%, 11%, 0) scale(0.94); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+@keyframes auroraDrift2 {
+  0%   { transform: translate3d(0, 0, 0) scale(1.05); }
+  33%  { transform: translate3d(-11%, -7%, 0) scale(0.94); }
+  66%  { transform: translate3d(7%, -11%, 0) scale(1.16); }
+  100% { transform: translate3d(0, 0, 0) scale(1.05); }
+}
+@keyframes auroraDrift3 {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(10%, -9%, 0) scale(1.22); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+@keyframes auroraDrift4 {
+  0%   { transform: translate3d(0, 0, 0) scale(1.1); }
+  50%  { transform: translate3d(-13%, 9%, 0) scale(0.88); }
+  100% { transform: translate3d(0, 0, 0) scale(1.1); }
 }
 
 /* ============================================================

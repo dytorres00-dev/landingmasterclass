@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { AuroraBackground } from "@/components/ui/AuroraBackground";
 import { heroStagger, heroTitle, heroItem } from "@/lib/motion";
 
 const stats = [
@@ -29,14 +30,8 @@ export function Hero() {
       aria-labelledby="hero-title"
       className="relative overflow-hidden bg-paper"
     >
-      {/* Aura sutil para profundidad */}
-      <div aria-hidden className="absolute inset-0">
-        <div
-          className={`aura-blob absolute -top-24 right-0 h-[440px] w-[440px] bg-forest/15 ${
-            reduced ? "" : "animate-aura-slow"
-          }`}
-        />
-      </div>
+      {/* Fondo aurora sedosa animado */}
+      <AuroraBackground />
 
       <div className="relative z-10 mx-auto grid max-w-container items-center gap-12 px-6 pb-20 pt-14 md:px-10 md:pb-28 md:pt-20 lg:grid-cols-[1.05fr_.95fr] lg:gap-14 lg:px-12">
         {/* Columna de texto */}
