@@ -16,7 +16,7 @@ import crypto from "crypto";
 const GRAPH_VERSION = "v21.0";
 
 // Pixel ID de Dylan Torres (público). La variable de entorno lo sobrescribe.
-const DEFAULT_PIXEL_ID = "939339841402645";
+const DEFAULT_PIXEL_ID = "24591544417190668";
 
 /** SHA-256 en hex, normalizando según pide Meta (trim + minúsculas). */
 function hash(value: string): string {
