@@ -75,11 +75,18 @@ El body es JSON con esta forma:
   "email": "string",
   "whatsapp": "string",
   "rol": "dueno | gerente | emprendedor | otro",
+  "rolLabel": "Dueño de negocio",
   "usoIA": "nada | basico | implementado",
+  "usoIALabel": "No, nada todavía",
   "reto": "tiempo | clientes | empezar | otro",
-  "createdAt": "ISO 8601"
+  "retoLabel": "Perder tiempo en tareas repetitivas",
+  "createdAt": "ISO 8601",
+  "source": "landing-masterclass-dylan-torres"
 }
 ```
+
+Cada campo `*Label` es la versión legible del valor crudo, pensada para
+mapearse directo a una columna del Google Sheet y al cuerpo del correo.
 
 La URL del webhook **nunca** se expone al cliente: la llamada pasa por
 `/api/register`, que valida con zod y luego hace el fetch al webhook de Make.
