@@ -5,6 +5,7 @@ import { Solucion } from "@/components/sections/Solucion";
 import { Plan } from "@/components/sections/Plan";
 import { Registro } from "@/components/sections/Registro";
 import { Footer } from "@/components/ui/Footer";
+import { FloatingCTA } from "@/components/ui/FloatingCTA";
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
       <Plan />
       <Registro />
       <Footer />
+      <FloatingCTA />
     </main>
   );
 }

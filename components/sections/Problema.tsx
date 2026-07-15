@@ -30,7 +30,7 @@ export function Problema() {
     <section
       id="problema"
       aria-labelledby="problema-title"
-      className="bg-paper-warm py-24 md:py-32"
+      className="bg-paper-warm py-16 sm:py-24 md:py-32"
     >
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20">
@@ -49,15 +49,13 @@ export function Problema() {
             </p>
           </ScrollReveal>
 
-          <div className="lg:col-span-7 flex flex-col gap-10">
+          <div className="lg:col-span-7 flex flex-col gap-5">
             {pains.map((pain, i) => (
               <ScrollReveal key={pain.title} delay={i * 0.05}>
-                <article className="flex gap-5 border-t border-carbon/15 pt-8">
-                  <pain.icon
-                    className="h-6 w-6 shrink-0 text-forest mt-1"
-                    strokeWidth={1.4}
-                    aria-hidden
-                  />
+                <article className="group flex gap-5 rounded-xl border border-carbon/10 bg-bone/70 p-6 md:p-7 shadow-soft transition-all duration-500 ease-editorial hover:-translate-y-1 hover:border-gold/50 hover:shadow-lift">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-forest/[0.06] text-forest transition-colors duration-500 group-hover:bg-forest group-hover:text-bone">
+                    <pain.icon className="h-5 w-5" strokeWidth={1.5} aria-hidden />
+                  </span>
                   <div>
                     <h3 className="font-serif text-[22px] md:text-[26px] leading-snug text-carbon">
                       {pain.title}

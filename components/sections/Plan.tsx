@@ -28,7 +28,7 @@ export function Plan() {
     <section
       id="plan"
       aria-labelledby="plan-title"
-      className="bg-paper-warm py-24 md:py-32"
+      className="bg-paper-warm py-16 sm:py-24 md:py-32"
     >
       <Container>
         <ScrollReveal className="max-w-2xl">
@@ -41,17 +41,15 @@ export function Plan() {
           </h2>
         </ScrollReveal>
 
-        <ol className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 lg:gap-10">
+        <ol className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {steps.map((s, i) => (
             <ScrollReveal key={s.n} delay={i * 0.08} as="li">
-              <div className="relative h-full flex flex-col gap-5 border-t border-carbon/20 pt-8">
+              <div className="group relative h-full flex flex-col gap-5 rounded-xl border border-carbon/10 bg-bone/80 p-7 md:p-8 shadow-soft transition-all duration-500 ease-editorial hover:-translate-y-1.5 hover:border-gold/50 hover:shadow-lift">
                 <div className="flex items-baseline justify-between">
-                  <s.icon
-                    className="h-7 w-7 text-forest"
-                    strokeWidth={1.4}
-                    aria-hidden
-                  />
-                  <span className="font-serif text-[28px] text-gold">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-forest/[0.06] text-forest transition-colors duration-500 group-hover:bg-forest group-hover:text-bone">
+                    <s.icon className="h-6 w-6" strokeWidth={1.5} aria-hidden />
+                  </span>
+                  <span className="font-serif text-[40px] leading-none text-gold/90">
                     {s.n}
                   </span>
                 </div>

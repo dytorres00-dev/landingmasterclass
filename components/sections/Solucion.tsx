@@ -14,7 +14,7 @@ export function Solucion() {
     <section
       id="solucion"
       aria-labelledby="solucion-title"
-      className="bg-bone py-24 md:py-32"
+      className="bg-bone py-16 sm:py-24 md:py-32"
     >
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20">
@@ -67,7 +67,7 @@ export function Solucion() {
 
           <div className="lg:col-span-7 flex flex-col">
             <ScrollReveal delay={0.05}>
-              <div className="border border-forest/15 p-8 md:p-10 bg-paper-warm">
+              <div className="rounded-2xl border border-forest/15 p-8 md:p-10 bg-paper-warm shadow-soft">
                 <span className="text-eyebrow text-gold">Después de esta hora vas a poder…</span>
                 <ul className="mt-8 flex flex-col gap-6">
                   {outcomes.map((o, i) => (

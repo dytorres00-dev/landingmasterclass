@@ -7,7 +7,7 @@ export function Registro() {
     <section
       id="registro"
       aria-labelledby="registro-title"
-      className="bg-bone py-24 md:py-32"
+      className="bg-bone py-16 sm:py-24 md:py-32"
     >
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-20">
@@ -29,7 +29,7 @@ export function Registro() {
           </ScrollReveal>
 
           <ScrollReveal className="lg:col-span-7" delay={0.1}>
-            <div className="border border-carbon/10 bg-paper-warm p-6 sm:p-10">
+            <div className="rounded-2xl border border-carbon/10 bg-paper-warm p-6 sm:p-10 shadow-lift">
               <RegisterForm />
             </div>
           </ScrollReveal>

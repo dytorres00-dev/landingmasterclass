@@ -6,9 +6,15 @@ export function Agitacion() {
     <section
       id="agitacion"
       aria-labelledby="agitacion-title"
-      className="bg-forest text-bone py-24 md:py-32"
+      className="relative overflow-hidden bg-forest text-bone py-16 sm:py-24 md:py-32"
     >
-      <Container>
+      {/* Glow radial + viñeta para dramatismo */}
+      <div aria-hidden className="absolute inset-0 vignette-forest" />
+      <div
+        aria-hidden
+        className="aura-blob absolute -top-20 left-1/2 -translate-x-1/2 h-[420px] w-[680px] bg-gold/10"
+      />
+      <Container className="relative z-10">
         <ScrollReveal>
           <span className="text-eyebrow text-gold">Y si nada cambia</span>
         </ScrollReveal>
