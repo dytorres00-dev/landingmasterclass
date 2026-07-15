@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 
 export function Footer() {
@@ -13,9 +14,17 @@ export function Footer() {
             Marketing &amp; IA
           </p>
         </div>
-        <p className="font-serif text-[15px] italic text-bone/45">
-          El futuro pertenece a quienes se adaptan hoy.
-        </p>
+        <div className="flex flex-col items-start gap-3 sm:items-end">
+          <Link
+            href="/politica-de-privacidad"
+            className="text-[13px] text-bone/60 transition-colors hover:text-gold"
+          >
+            Política de Privacidad
+          </Link>
+          <p className="font-serif text-[15px] italic text-bone/45">
+            El futuro pertenece a quienes se adaptan hoy.
+          </p>
+        </div>
       </Container>
     </footer>
   );
