@@ -22,9 +22,9 @@ export default function HomePage() {
         <QueAprenderas />
         <SobreMi />
         <Proceso />
+        <Registro />
         <Testimonios />
         <FAQ />
-        <Registro />
         <Footer />
         <FloatingCTA />
       </main>

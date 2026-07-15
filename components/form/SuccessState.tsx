@@ -45,7 +45,7 @@ export function SuccessState({ nombre }: SuccessStateProps) {
           aria-hidden
         />
         <p className="text-[15px] text-carbon/70 leading-relaxed">
-          <span className="block font-medium text-carbon">Jueves 24 de julio · 7:00 p. m. (COL)</span>
+          <span className="block font-medium text-carbon">Martes 21 de julio · 7:00 p. m. (COL)</span>
           Masterclass en vivo · 60 minutos + Q&amp;A
         </p>
       </div>

@@ -5,9 +5,9 @@ import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 const testimonios = [
   {
     quote:
-      "Automaticé la atención inicial de clientes y recuperé más de 10 horas a la semana.",
-    name: "Laura Méndez",
-    role: "Fundadora, estudio creativo",
+      "Ahora la IA filtra y atiende a los interesados al instante. Calificamos clientes mucho más rápido y no se nos escapa ninguna oportunidad.",
+    name: "Mariana Gómez",
+    role: "Gerente, inmobiliaria",
   },
   {
     quote:
@@ -17,9 +17,9 @@ const testimonios = [
   },
   {
     quote:
-      "Pasamos de responder tarde a captar leads de forma constante. Un antes y un después.",
-    name: "Andrea Soto",
-    role: "Directora, agencia digital",
+      "Creamos anuncios con IA en minutos y empezamos a vender mucho más, sin depender de una agencia.",
+    name: "Valentina Ríos",
+    role: "Dueña, negocio de belleza",
   },
 ];
 

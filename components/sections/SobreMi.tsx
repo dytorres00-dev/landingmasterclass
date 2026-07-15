@@ -1,6 +1,6 @@
+import Image from "next/image";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Container } from "@/components/ui/Container";
-import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 
 const pills = ["Claridad", "Confianza", "Equilibrio", "Enfoque"];
 
@@ -14,10 +14,13 @@ export function SobreMi() {
       <Container>
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <ScrollReveal>
-            <div className="relative mx-auto aspect-square w-full max-w-[440px] shadow-lift lg:max-w-none">
-              <ImagePlaceholder
-                label="Foto de Dylan"
-                className="h-full w-full"
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-[440px] overflow-hidden rounded shadow-lift lg:max-w-none">
+              <Image
+                src="/dylan-sobre.png"
+                alt="Dylan Torres trabajando con inteligencia artificial para negocios y emprendedores"
+                fill
+                sizes="(min-width: 1024px) 40vw, (min-width: 640px) 440px, 100vw"
+                className="object-cover"
               />
             </div>
           </ScrollReveal>
